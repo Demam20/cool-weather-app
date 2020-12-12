@@ -1,11 +1,15 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        CurrentWeatherComponent
       ],
     }).compileComponents();
   }));
@@ -19,13 +23,8 @@ describe('AppComponent', () => {
   it(`should have as title 'cool-weather-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('cool-weather-app');
+    expect(app.title).toEqual('cool weather');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cool-weather-app app is running!');
-  });
+  
 });
