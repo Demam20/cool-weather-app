@@ -1,1 +1,10 @@
-<p>city-search works!</p>
+<form>
+  <mat-form-field>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder='Enter city or zip'
+    aria-label='city or zip' [formControl]='search'/>
+    <mat-error *ngIf="search.invalid">
+      type 3 or more character to search
+    </mat-error>
+  </mat-form-field>
+</form>

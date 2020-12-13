@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs/internal/observable/of';
+import { Observable, of } from 'rxjs';
 import { ICurrentWeather } from './icurrent-weather';
 import { IWeatherService } from './iweather-service';
 
@@ -18,8 +17,7 @@ export class WeatherFakeService implements IWeatherService{
   }
 
   constructor() { }
-  public getCurrentWeather(city:string, country:string):
-  Observable<ICurrentWeather>{
+  public getCurrentWeather(searchText: string | number, country?: string): Observable<ICurrentWeather>{
     return of(this.fakeWeather);
   }
    
