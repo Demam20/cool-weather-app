@@ -6,6 +6,11 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { WeatherService} from './weather.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CitySearchComponent } from './city-search/city-search.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import 'hammerjs';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [ 
     AppComponent,
@@ -15,7 +20,11 @@ import { CitySearchComponent } from './city-search/city-search.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
